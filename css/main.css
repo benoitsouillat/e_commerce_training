@@ -1,23 +1,5 @@
-body {
-  background-color: #00FFFF;
-}
-body section {
-  width: 100%;
-}
-body #boutique {
-  min-width: 95%;
-  width: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-body .boutique-items {
-  min-width: 70%;
-  width: auto;
-  max-width: 90%;
-}
-
 .card {
+  background-color: #f2f2f2;
   border: solid 1px black;
   border-radius: 5%;
   margin: 2%;
@@ -26,6 +8,11 @@ body .boutique-items {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  width: 350px;
+  max-width: 40%;
+  min-width: 270px;
+  min-height: 200px;
+  height: auto;
 }
 .card_name {
   color: #4d4d4d;
@@ -34,24 +21,62 @@ body .boutique-items {
 }
 .card_price {
   font-size: 1.5em;
-  position: relative;
-  left: 90%;
 }
 .card_description {
   font-size: 0.9em;
 }
 .card_btn_modify {
-  max-width: 50%;
-  width: 114px;
-  position: relative;
-  left: calc(92% - 230px);
+  max-width: 45%;
+  width: 118px;
+}
+.card_btn_modify:hover {
+  border: solid 2px black;
 }
 .card_btn_delete {
-  max-width: 50%;
-  width: 114px;
-  position: relative;
-  left: calc(95% - 114px);
+  width: 118px;
 }
 .card_btn_delete:hover {
-  transform: scale(1.1);
+  border: solid 2px black;
+}
+.card .btn_container {
+  display: flex;
+  justify-content: space-around;
+  max-height: 40px;
+  width: 100%;
+}
+
+body {
+  background-color: black;
+  color: #b3b3b3;
+}
+body h1,
+body h2 {
+  text-align: center;
+  padding: 40px;
+}
+body #boutique {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+body #boutique .boutique-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+}
+body .action_container {
+  padding: 15px;
+  min-width: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+body .btn {
+  min-width: 100px;
 }

@@ -24,16 +24,18 @@
                 <p class="card_name"><?php echo htmlspecialchars($row['name']); ?></p>
                 <p class="card_price"><?php echo htmlspecialchars($row['price'] . " €"); ?></p>
                 <p class="card_desc"><?php echo htmlspecialchars($row['description']); ?></p>
-                <a type="button" class="card_btn_modify btn btn-warning" id="<?php echo $row['id']; ?>"
-                    href="./php/modify-item.php?id=<?php echo $row['id']; ?>">Modifier
-                </a>
-                <a type="button" class="card_btn_delete btn btn-danger" id="<?php echo $row['id']; ?>"
-                    href="./php/delete-item.php?id=<?php echo $row['id']; ?>">Suppression
-                </a>
+                <div class="btn_container">
+                    <a type="button" class="card_btn_modify btn btn-warning" id="<?php echo $row['id']; ?>"
+                        href="./php/modify-item.php?id=<?php echo $row['id']; ?>">Modifier
+                    </a>
+                    <a type="button" class="card_btn_delete btn btn-danger" id="<?php echo $row['id']; ?>"
+                        href="./php/delete-item.php?id=<?php echo $row['id']; ?>">Suppression
+                    </a>
+                </div>
             </div>
             <?php endwhile; ?>
         </div>
-        <div class="p-4">
+        <div class="action_container">
             <a href="./php/form_add_item.php" class="btn btn-info">Ajouter un article</a>
         </div>
     </section>

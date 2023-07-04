@@ -1,0 +1,59 @@
+@import './variables';
+
+.card {
+    background-color: darken($color: #fff, $amount: 5);
+    border: solid 1px black;
+    border-radius: 5%;
+    margin: 2%;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 350px;
+    max-width: 40%;
+    min-width: 270px;
+    min-height: 200px;
+    height: auto;
+
+    &_name {
+        color: darken($color: grey, $amount: 20);
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    &_price {
+        font-size: 1.5em;
+
+    }
+
+    &_description {
+        font-size: 0.9em;
+    }
+
+    &_btn_modify {
+        max-width: 45%;
+        width: 118px;
+
+        &:hover {
+            border: solid 2px black;
+        }
+    }
+
+    &_btn_delete {
+        width: 118px;
+
+        &:hover {
+            border: solid 2px black;
+        }
+    }
+
+    .btn_container {
+        display: flex;
+        justify-content: space-around;
+        max-height: 40px;
+        width: 100%;
+    }
+
+}
