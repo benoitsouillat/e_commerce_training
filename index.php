@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -17,13 +17,19 @@
     <section id="boutique" class="container-fluid d-flex flex-row">
         <div class="boutique-items">
             <?php
-
+            $stmt = $conn->query($all_items);
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
             ?>
+            <div class="card d-flex flex-column align-items-center">
+                <p><?php echo htmlspecialchars($row['name']); ?></p>
+                <p><?php echo htmlspecialchars($row['price']); ?></p>
+                <p><?php echo htmlspecialchars($row['description']); ?></p>
+            </div>
+            <?php endwhile; ?>
         </div>
-        <div>
+        <div class="p-4">
             <a href="./php/form_add_item.php" class="btn btn-info">Ajouter un article</a>
         </div>
-
     </section>
 
 </body>

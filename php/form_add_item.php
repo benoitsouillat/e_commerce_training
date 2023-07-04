@@ -36,6 +36,7 @@
                 <button type="submit" class="btn btn-success">Ajouter l'article </button>
             </form>
         </div>
+        <a href="../index.php" class="btn btn-danger">Retour à la liste des items</a>
 
     </section>
 
