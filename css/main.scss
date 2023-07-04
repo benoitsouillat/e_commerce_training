@@ -1,6 +1,24 @@
 body {
     background-color: #00FFFF;
 
+    section {
+        width: 100%;
+    }
+
+    #boutique {
+        min-width: 95%;
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+    }
+
+    .boutique-items {
+        min-width: 70%;
+        width: auto;
+        max-width: 90%;
+    }
 }
 
 .card {
@@ -8,6 +26,10 @@ body {
     border-radius: 5%;
     margin: 2%;
     padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 
     &_name {
         color: darken($color: grey, $amount: 20);
@@ -23,6 +45,13 @@ body {
 
     &_description {
         font-size: 0.9em;
+    }
+
+    &_btn_modify {
+        max-width: 50%;
+        width: 114px;
+        position: relative;
+        left: calc(92% - 230px);
     }
 
     &_btn_delete {

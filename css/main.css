@@ -1,12 +1,31 @@
 body {
   background-color: #00FFFF;
 }
+body section {
+  width: 100%;
+}
+body #boutique {
+  min-width: 95%;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+body .boutique-items {
+  min-width: 70%;
+  width: auto;
+  max-width: 90%;
+}
 
 .card {
   border: solid 1px black;
   border-radius: 5%;
   margin: 2%;
   padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 .card_name {
   color: #4d4d4d;
@@ -20,6 +39,12 @@ body {
 }
 .card_description {
   font-size: 0.9em;
+}
+.card_btn_modify {
+  max-width: 50%;
+  width: 114px;
+  position: relative;
+  left: calc(92% - 230px);
 }
 .card_btn_delete {
   max-width: 50%;

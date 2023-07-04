@@ -14,7 +14,7 @@
 
 <body>
     <h1>Bienvenue sur cette boutique en ligne </h1>
-    <section id="boutique" class="container-fluid d-flex flex-row">
+    <section id="boutique">
         <div class="boutique-items">
             <?php
             $stmt = $conn->query($all_items);
@@ -24,6 +24,9 @@
                 <p class="card_name"><?php echo htmlspecialchars($row['name']); ?></p>
                 <p class="card_price"><?php echo htmlspecialchars($row['price'] . " €"); ?></p>
                 <p class="card_desc"><?php echo htmlspecialchars($row['description']); ?></p>
+                <a type="button" class="card_btn_modify btn btn-warning" id="<?php echo $row['id']; ?>"
+                    href="./php/modify-item.php?id=<?php echo $row['id']; ?>">Modifier
+                </a>
                 <a type="button" class="card_btn_delete btn btn-danger" id="<?php echo $row['id']; ?>"
                     href="./php/delete-item.php?id=<?php echo $row['id']; ?>">Suppression
                 </a>
