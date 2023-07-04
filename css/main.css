@@ -77,6 +77,10 @@ body .action_container {
   justify-content: flex-start;
   align-items: center;
 }
+body .action_container .btn {
+  width: 100%;
+}
 body .btn {
   min-width: 100px;
+  margin: 2px;
 }

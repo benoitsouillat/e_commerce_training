@@ -46,20 +46,20 @@
     ?>
     <section class="container-fluid" id='modify_item'>
         <div>
-            <form class="d-flex" action="modify-item.php?id=<?php echo $data['id'] ?>" method="POST">
-                <div class="d-flex flex-column align-items-center p-2 m-2">
+            <form action="modify-item.php?id=<?php echo $data['id'] ?>" method="POST">
+                <div class="form-group p-2 m-2">
                     <label name="name">Article : </label>
-                    <input name="name" value="<?php echo $data['name'] ?>">
+                    <input class="form-control" name="name" value="<?php echo $data['name'] ?>">
                 </div>
                 <br>
-                <div class="d-flex flex-column align-items-center p-2 m-2">
+                <div class="form-group p-2 m-2">
                     <label name="price">Prix : </label>
-                    <input name="price" value="<?php echo $data['price'] ?>">
+                    <input class="form-control" name="price" value="<?php echo $data['price'] ?>">
                 </div>
                 <br>
-                <div class="d-flex flex-column align-items-center p-2 m-2">
+                <div class="form-group p-2 m-2">
                     <label name="description">Description : </label>
-                    <textarea name="description"><?php echo $data['description'] ?></textarea>
+                    <textarea class="form-control" name="description"><?php echo $data['description'] ?></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-success">Mettre à jour l'article </button>
