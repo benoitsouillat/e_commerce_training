@@ -17,7 +17,7 @@
 
     <section class="container-fluid" id='add_item'>
         <div>
-            <form class="d-flex" action="">
+            <form class="d-flex" action="add-item.php" method="POST">
                 <div class="d-flex flex-column align-items-center p-2 m-2">
                     <label name="name">Article : </label>
                     <input name="name" placeholder="Nom de l'article">
