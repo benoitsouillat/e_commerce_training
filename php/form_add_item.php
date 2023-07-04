@@ -16,27 +16,28 @@
     <h1>Ajouter un article on DB</h1>
 
     <section class="container-fluid" id='add_item'>
-        <div>
-            <form class="d-flex" action="add-item.php" method="POST">
-                <div class="d-flex flex-column align-items-center p-2 m-2">
+        <div class="d-flex flex-row justify-content-center">
+            <form action="add-item.php" method="POST">
+                <div class="form-group p-2 m-2">
                     <label name="name">Article : </label>
-                    <input name="name" placeholder="Nom de l'article">
+                    <input class="form-control" name="name" placeholder="Nom de l'article">
                 </div>
                 <br>
-                <div class="d-flex flex-column align-items-center p-2 m-2">
+                <div class="form-group p-2 m-2">
                     <label name="price">Prix : </label>
-                    <input name="price" placeholder="10">
+                    <input class="form-control" name="price" placeholder="10">
                 </div>
                 <br>
-                <div class="d-flex flex-column align-items-center p-2 m-2">
+                <div class="form-group p-2 m-2">
                     <label name="description">Description : </label>
-                    <textarea name="description" placeholder="La description de l'article ... "></textarea>
+                    <textarea class="form-control" name="description"
+                        placeholder="La description de l'article ... "></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-success">Ajouter l'article </button>
+                <a href="../index.php" class="btn btn-secondary">Retour à la liste des objets</a>
             </form>
         </div>
-        <a href="../index.php" class="btn btn-danger">Retour à la liste des items</a>
 
     </section>
 
