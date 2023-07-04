@@ -1,0 +1,35 @@
+body {
+    background-color: #00FFFF;
+
+}
+
+.card {
+    border: solid 1px black;
+    border-radius: 5%;
+    margin: 2%;
+    padding: 10px 20px;
+
+    &_name {
+        color: darken($color: grey, $amount: 20);
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    &_price {
+        font-size: 1.5em;
+        position: relative;
+        left: 90%;
+    }
+
+    &_description {
+        font-size: 0.9em;
+    }
+
+    &_btn_delete {
+        max-width: 50%;
+        width: 114px;
+        position: relative;
+        left: calc(95% - 114px);
+    }
+
+}

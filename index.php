@@ -20,10 +20,12 @@
             $stmt = $conn->query($all_items);
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
             ?>
-            <div class="card d-flex flex-column align-items-center">
-                <p><?php echo htmlspecialchars($row['name']); ?></p>
-                <p><?php echo htmlspecialchars($row['price']); ?></p>
-                <p><?php echo htmlspecialchars($row['description']); ?></p>
+            <div class="card">
+                <p class="card_name"><?php echo htmlspecialchars($row['name']); ?></p>
+                <p class="card_price"><?php echo htmlspecialchars($row['price'] . " €"); ?></p>
+                <p class="card_desc"><?php echo htmlspecialchars($row['description']); ?></p>
+                <button type="button" class="card_btn_delete btn btn-danger" id="<?php echo $row['id']; ?>">Suppression
+                </button>
             </div>
             <?php endwhile; ?>
         </div>

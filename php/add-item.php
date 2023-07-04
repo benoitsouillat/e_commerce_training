@@ -14,6 +14,7 @@ $stmt->bindParam(':description', $description);
 try {
     $stmt->execute();
     echo "L'article a bien été ajouté !";
+    header("Location:../index.php");
 } catch (PDOException $e) {
     echo "Une erreur s'est produite : " . $e;
 }
