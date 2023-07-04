@@ -30,6 +30,10 @@ body {
         width: 114px;
         position: relative;
         left: calc(95% - 114px);
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 
 }

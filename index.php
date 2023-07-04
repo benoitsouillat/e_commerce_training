@@ -24,8 +24,9 @@
                 <p class="card_name"><?php echo htmlspecialchars($row['name']); ?></p>
                 <p class="card_price"><?php echo htmlspecialchars($row['price'] . " €"); ?></p>
                 <p class="card_desc"><?php echo htmlspecialchars($row['description']); ?></p>
-                <button type="button" class="card_btn_delete btn btn-danger" id="<?php echo $row['id']; ?>">Suppression
-                </button>
+                <a type="button" class="card_btn_delete btn btn-danger" id="<?php echo $row['id']; ?>"
+                    href="./php/delete-item.php?id=<?php echo $row['id']; ?>">Suppression
+                </a>
             </div>
             <?php endwhile; ?>
         </div>

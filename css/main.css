@@ -27,3 +27,6 @@ body {
   position: relative;
   left: calc(95% - 114px);
 }
+.card_btn_delete:hover {
+  transform: scale(1.1);
+}
