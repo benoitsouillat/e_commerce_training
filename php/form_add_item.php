@@ -34,7 +34,7 @@
                         placeholder="La description de l'article ... "></textarea>
                 </div>
                 <div class="form-group p-2 m-2">
-                    <input type="hidden" name="MAX_FILE_SIZE" value="50000">
+                    <input type="hidden" name="MAX_FILE_SIZE" value="500000">
 
                     <label>Ajouter une image de votre article</label>
                     <input class="form-control" type="file" name="image">
