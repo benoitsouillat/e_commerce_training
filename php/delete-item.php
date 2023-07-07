@@ -1,6 +1,7 @@
 <?php
 
-require_once('./connection.php');
+require_once('./components/sql.php');
+require_once('./components/connection.php');
 
 $delete_sql = "DELETE FROM `merchandise` WHERE `id` = :id";
 $stmt = $conn->prepare($delete_sql);
