@@ -1,8 +1,6 @@
 <?php
 require_once(__DIR__ . '/connection.php');
 
-
-
 $all_items = "SELECT * FROM merchandise";
 
 // Insertion SQL des données du formulaire
