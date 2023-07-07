@@ -25,7 +25,6 @@
 </head>
 
 <body>
-
     <section class="container-fluid" id='modify_item'>
         <div>
             <form action="modify-item.php?id=<?php echo $data['id'] ?>" method="POST" enctype="multipart/form-data">
