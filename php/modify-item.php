@@ -20,7 +20,6 @@
         insert_item($conn, update_query($id), $img_path);
     }
     $data = id_query_assoc($conn, select_id($id));
-
     ?>
 </head>
 
