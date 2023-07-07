@@ -1,6 +1,7 @@
 <?php
 
-require_once(__DIR__ . '/connection.php');
+require_once(__DIR__ . '/components/sql.php');
+require_once(__DIR__ . '/components/format_str.php');
 
 //Définition des variables de POST pour Insertion dans la base de données.
 $name = $_POST['name'];
@@ -27,8 +28,7 @@ if (isset($_FILES['image'])) {
 }
 $img_path = '/media/img/' . $file_name;
 
-// Insertion SQL des données du formulaire
-$insert_sql = "INSERT INTO merchandise (name, price, description, img_path) VALUES (:name, :price, :description, :img_path)";
+
 $stmt = $conn->prepare($insert_sql);
 $stmt->bindParam(':name', $name);
 $stmt->bindParam(':price', $price);
