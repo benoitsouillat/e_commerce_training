@@ -16,7 +16,7 @@
     if (isset($_POST['name'], $_POST['price'], $_POST['description'])) {
         $data = id_query_assoc($conn, select_id($id));
         $img_path = $data['img_path'];
-        $img_path = record_file(get_last_id_number($conn, $all_items), $img_path);
+        $img_path = record_file($id - 1, $img_path);
         insert_item($conn, update_query($id), $img_path);
     }
     $data = id_query_assoc($conn, select_id($id));

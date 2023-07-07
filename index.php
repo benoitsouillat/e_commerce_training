@@ -37,6 +37,7 @@
         <div class="action_container">
             <a href="./php/form_add_item.php" class="btn btn-primary">Ajouter un article</a>
             <a href="#" class="btn btn-info">Rechercher</a>
+            <a href="./php/register.php" class="btn btn-success">S'inscrire</a>
         </div>
     </section>
 
