@@ -7,7 +7,7 @@
     <title>Ajouter un article </title>
     <?php
     require_once(__DIR__ . '/../src/headlinks.php');
-    require_once(__DIR__ . '/connection.php');
+    require_once(__DIR__ . './components/sql.php');
     ?>
 
 </head>
@@ -30,11 +30,10 @@
                 <br>
                 <div class="form-group p-2 m-2">
                     <label name="description">Description : </label>
-                    <textarea class="form-control" name="description"
-                        placeholder="La description de l'article ... "></textarea>
+                    <textarea class="form-control" name="description" placeholder="La description de l'article ... "></textarea>
                 </div>
                 <div class="form-group p-2 m-2">
-                    <input type="hidden" name="MAX_FILE_SIZE" value="500000">
+                    <input type="hidden" name="MAX_FILE_SIZE" value="5000000">
 
                     <label>Ajouter une image de votre article</label>
                     <input class="form-control" type="file" name="image">

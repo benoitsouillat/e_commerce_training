@@ -11,8 +11,8 @@
   width: 320px;
   max-width: 50%;
   min-width: 260px;
-  min-height: 200px;
-  height: auto;
+  min-height: 15vh;
+  height: 285px;
 }
 .card_name {
   color: #4d4d4d;
@@ -43,6 +43,12 @@
   justify-content: space-around;
   max-height: 40px;
   width: 100%;
+}
+.card img {
+  max-width: 50%;
+  max-height: 85px;
+  min-height: 15%;
+  width: auto;
 }
 
 body {

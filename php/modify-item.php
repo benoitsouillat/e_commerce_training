@@ -7,13 +7,13 @@
     <title>Modifier un article</title>
     <?php
     require_once(__DIR__ . '/../src/headlinks.php');
+    require_once('./components/sql.php');
+
     ?>
 </head>
 
 <body>
     <?php
-
-    require_once('./connection.php');
 
     $id = $_GET['id'];
 
@@ -22,9 +22,9 @@
         $name = $_POST['name'];
         $price = $_POST['price'];
         $description = $_POST['description'];
+        $img_path = '';
 
-        $update_query = "UPDATE merchandise SET name = :name, price = :price, description = :description WHERE id = $id";
-        $stmt = $conn->prepare($update_query);
+        $stmt = $conn->prepare($update_query($id));
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':price', $price);
         $stmt->bindParam(':description', $description);
@@ -38,8 +38,7 @@
     }
 
 
-    $select_id = "SELECT * FROM merchandise WHERE id=$id";
-    $stmt = $conn->query($select_id);
+    $stmt = $conn->query($select_id($id));
     $stmt->execute();
     $data = $stmt->fetch();
 
