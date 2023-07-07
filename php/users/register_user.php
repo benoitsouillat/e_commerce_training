@@ -14,13 +14,13 @@ if (isset($_POST['firstname'], $_POST['lastname'], $_POST['email'])) {
     $img_profil_path = DEFAULT_PROFIL_PATH;
 
     if (isset($_FILES['profil_img'])) {
-        $file_name = replace_space($firstname . '-' . $lastname);
+        $file_name = replace_space(strtolower($firstname . '-' . $lastname)) . '.jpg';
         $file_tmp = $_FILES['profil_img']['tmp_name'];
         $file_destination = '../../media/users/' . $file_name;
 
         if (move_uploaded_file($file_tmp, $file_destination)) {
             echo "L'image a bien été enregistrée";
-            $img_profil_path = "/media/users/" . $file_name;
+            $img_profil_path = "/media/users/" . $file_name . '.jpg';
         } else {
             echo "Une erreur s'est produite pendant l'enregistrement de l'image de profil";
         }
