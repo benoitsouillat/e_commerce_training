@@ -1,5 +1,8 @@
 /media/*
 !/media/users
+!/media/img
 
 /media/users/*
+/media/img/*
 !/media/users/default.jpg
+!/media/img/default.jpg

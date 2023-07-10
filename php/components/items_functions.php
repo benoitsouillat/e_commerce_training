@@ -52,6 +52,10 @@ function insert_item($conn, $item, $img_path)
     $price = $_POST['price'];
     $description = $_POST['description'];
 
+    if (!$img_path) {
+        $img_path = "/media/img/default.jpg";
+    }
+
     $stmt = $conn->prepare($item);
     $stmt->bindParam(':name', $name);
     $stmt->bindParam(':price', $price);
