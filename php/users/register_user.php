@@ -19,7 +19,7 @@ if (isset($_POST['firstname'], $_POST['lastname'], $_POST['email'])) {
     foreach ($email_list as $el) {
         if ($_POST['email'] == $el['email']) {
             $error_php = "Cet email est déjà enregistré ! ";
-            return (header("Location:../register.php?error=email"));
+            return (header("Location:../register.php?error=email&email=$email"));
         } else {
 
 

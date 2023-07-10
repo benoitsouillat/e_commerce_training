@@ -18,7 +18,7 @@
             <p class="error">
                 <?php
                 if (isset($_GET['error'])) {
-                    echo 'Cet email est déjà utilisé ! ';
+                    echo $_GET['email'] . ' est déjà utilisé ! ';
                 }
                 ?>
             </p>
