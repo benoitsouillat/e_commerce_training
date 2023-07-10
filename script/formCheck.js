@@ -42,6 +42,26 @@ if (formAddItem || formModifyItem) {
 if (formAddUser) {
     formAddUser.addEventListener("submit", (e) => {
         e.preventDefault();
-        alert("Formulaire envoyé");
+        firstName = document.getElementById('firstname').value;
+        lastName = document.getElementById('lastname').value;
+        email = document.getElementById('email').value;
+        emailVerification = document.getElementById('email-verification').value;
+        error = "";
+
+        if (!regStr.test(firstName) || !regStr.test(lastName)) {
+            error = "Le nom et le prénom doivent être en caractère romains";
+        }
+        if (email != emailVerification) {
+            error = "Les deux emails doivent être identiques";
+        }
+        if (firstName.length < 3 || lastName.length < 3) {
+            error = "Les noms et prénoms ne peuvent être inférieur à trois caractères !";
+        }
+        if (error != "") {
+            e.preventDefault();
+            document.getElementById('error').innerHTML = error;
+        }
+
+
     });
 }

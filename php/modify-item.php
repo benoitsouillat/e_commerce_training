@@ -26,8 +26,7 @@
 <body>
     <section class="container-fluid" id='modify_item'>
         <div>
-            <form id="form_modify_item" action="modify-item.php?id=<?php echo $data['id'] ?>" method="POST"
-                enctype="multipart/form-data">
+            <form id="form_modify_item" action="modify-item.php?id=<?php echo $data['id'] ?>" method="POST" enctype="multipart/form-data">
                 <div class="form-group p-2 m-2">
                     <label name="name">Article : </label>
                     <input id="name" class="form-control" name="name" value="<?php echo $data['name'] ?>">
@@ -40,8 +39,7 @@
                 <br>
                 <div class="form-group p-2 m-2">
                     <label name="description">Description : </label>
-                    <textarea id="description" class="form-control"
-                        name="description"><?php echo $data['description'] ?></textarea>
+                    <textarea id="description" class="form-control" name="description"><?php echo $data['description'] ?></textarea>
                 </div>
 
                 <div class="form-group p-2 m-2">
@@ -52,7 +50,7 @@
                 </div>
                 <div class="d-flex flex-row justify-content-around">
                     <button type="submit" class="btn btn-success">Mettre à jour l'article </button>
-                    <a href="../index.php" class="btn btn-danger">Retour à la liste des items</a>
+                    <a href="../index.php" class="btn btn-secondary">Retour à la liste des items</a>
                 </div>
             </form>
             <p id="error"></p>

@@ -29,6 +29,10 @@
                 <label for="email">Email : </label>
                 <input class="form-control" type="email" name="email" id="email" required>
             </div>
+            <div class="form-group p-2 m-2">
+                <label for="email">Vérifier Email : </label>
+                <input class="form-control" type="email" name="email" id="email-verification" required>
+            </div>
             <br>
             <div class="form-group p2 m2">
                 <input type="hidden" name="MAX_FILE_SIZE" value="5000000">
@@ -42,6 +46,10 @@
     <div class="action_container">
         <a href="./form_add_item.php" class="btn btn-primary">Ajouter un article</a>
         <a href="../index.php" class="btn btn-info">Retour à l'accueil</a>
+    </div>
+    <p id="error"></p>
+
+    <?php include_once('../src/footer.php') ?>
 </body>
 
 </html>
