@@ -32,7 +32,7 @@
             </div>
             <p id="error" class="error"></p>
             <div class="d-flex flex-row justify-content-around mt-4">
-                <button type="submit" class="btn btn-success">S'inscrire</button>
+                <button type="submit" class="btn btn-success">Se connecter</button>
                 <button type="reset" class="btn btn-secondary">Effacer</button>
             </div>
         </form>

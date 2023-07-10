@@ -5,9 +5,9 @@ require_once(__DIR__ . '/connection.php');
 require_once(__DIR__ . '/format_str.php');
 
 //Connexion à la base de donnée pour fetch les données et obtenir le dernier ID
-function get_last_id_number($conn, $all_items)
+function get_last_id_number($conn, $req)
 {
-    $stmt = $conn->query($all_items);
+    $stmt = $conn->query($req);
     $data = $stmt->fetchAll(PDO::FETCH_OBJ);
     $data_length = count($data);
     return $data[$data_length - 1]->id;
@@ -21,16 +21,16 @@ function get_list_emails($conn, $req)
 }
 
 //Récupération de donnée d'un élement en tableau associatif
-function id_query_assoc($conn, $item)
+function id_query_assoc($conn, $req)
 {
-    $stmt = $conn->query($item);
+    $stmt = $conn->query($req);
     return $stmt->fetch(PDO::FETCH_ASSOC);
 };
 
 //Récupération de donnée d'un élement en objets
-function id_query_obj($conn, $item)
+function id_query_obj($conn, $req)
 {
-    $stmt = $conn->query($item);
+    $stmt = $conn->query($req);
     return $stmt->fetch(PDO::FETCH_OBJ);
 };
 
@@ -53,7 +53,7 @@ function record_file($last_id, $img_path)
 };
 
 //Insertion des données dans la base de données
-function insert_item($conn, $item, $img_path)
+function insert_item($conn, $req, $img_path)
 {
     $name = $_POST['name'];
     $price = $_POST['price'];
@@ -63,7 +63,7 @@ function insert_item($conn, $item, $img_path)
         $img_path = "/media/img/default.jpg";
     }
 
-    $stmt = $conn->prepare($item);
+    $stmt = $conn->prepare($req);
     $stmt->bindParam(':name', $name);
     $stmt->bindParam(':price', $price);
     $stmt->bindParam(':description', $description);
