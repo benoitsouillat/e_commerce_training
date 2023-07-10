@@ -16,14 +16,19 @@
     <h1>Bienvenue sur cette boutique en ligne </h1>
     <section id="boutique">
         <div class="boutique-items">
-            <?php
-            session_start();
-            if (isset($_SESSION['username'])) {
-                $username = $_SESSION['username'];
-                $role = $_SESSION['role'];
-                echo 'Connecté : ' . $username . ' ' . $role;
-            }
-            ?>
+            <div class="w-100">
+                <p>
+                    <?php
+                    session_start();
+                    if (isset($_SESSION['username']) and ($_SESSION['username'] != "")) {
+                        $username = $_SESSION['username'];
+                        //$role = $_SESSION['role'];
+                        echo 'Connecté : ' . $username . ' - ' . $role;
+                    }
+                    ?>
+                </p>
+            </div>
+
             <?php
             $stmt = $conn->query($all_items);
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
@@ -44,11 +49,17 @@
 
         </div>
         <div class="action_container">
-            <a href="./php/form_add_item.php" class="btn btn-primary">Ajouter un article</a>
-            <a href="#" class="btn btn-info">Rechercher</a>
-            <a href="./php/register.php" class="btn btn-success">S'inscrire</a>
-            <!-- Conditionner l'affichage des boutons Se connecter, S'inscrire, Se deconnecter , Ajouter un article en fonction de l'état de connexion de l'utilisateur -- utiliser écho après vérification -->
-            <a href="./php/login.php" class="btn btn-success">Se connecter</a>
+            <?php
+            if (isset($_SESSION['username']) and ($_SESSION['username'] != "")) {        ?>
+                <a href="./php/form_add_item.php" class="btn btn-primary">Ajouter un article</a>
+                <a href="#" class="btn btn-info">Rechercher</a>
+                <a href="./php/logout.php" class="btn btn-danger">Se déconnecter </a>
+
+            <?php } else {
+            ?>
+                <a href="./php/register.php" class="btn btn-success">S'inscrire</a>
+                <a href="./php/login.php" class="btn btn-success">Se connecter</a>
+            <?php } ?>
         </div>
     </section>
 
