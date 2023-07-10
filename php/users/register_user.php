@@ -12,6 +12,7 @@ if (isset($_POST['firstname'], $_POST['lastname'], $_POST['email'])) {
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
+    $password = $_POST['password'];
     $img_profil_path = DEFAULT_PROFIL_PATH;
     $email_list = get_list_emails($conn, get_all_emails());
     $error_php = "";
@@ -42,6 +43,7 @@ if (isset($_POST['firstname'], $_POST['lastname'], $_POST['email'])) {
             $stmt->bindParam(':firstname', $firstname);
             $stmt->bindParam(':lastname', $lastname);
             $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':password', $password);
             $stmt->bindParam(':img_profil_path', $img_profil_path);
             try {
                 $stmt->execute();

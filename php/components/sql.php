@@ -19,7 +19,7 @@ function update_query($id)
 
 function insert_user()
 {
-    return "INSERT INTO users (firstname, lastname, email, img_profil_path) VALUES (:firstname, :lastname, :email, :img_profil_path)";
+    return "INSERT INTO users (firstname, lastname, email, password, img_profil_path) VALUES (:firstname, :lastname, :email, :password, :img_profil_path)";
 }
 function get_all_emails()
 {
