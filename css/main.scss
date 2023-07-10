@@ -5,10 +5,21 @@ body {
     background-color: $background-primary;
     color: $text-primary;
 
+    .container-fluid {
+
+        min-height: 100vh;
+    }
+
     h1,
     h2 {
         text-align: center;
         padding: 40px;
+    }
+
+    form {
+        min-width: 300px;
+        width: 100%;
+        max-width: 600px;
     }
 
     #boutique {
@@ -48,4 +59,14 @@ body {
         margin: 2px;
     }
 
+    footer {
+        position: relative;
+        bottom: 80px;
+    }
+}
+
+#error {
+    font-weight: bold;
+    text-align: center;
+    color: $red;
 }

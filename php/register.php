@@ -14,7 +14,7 @@
     <h1>Espace utilisateur</h1>
     <h2> S'inscrire sur notre site </h2>
     <section class="register_bloc">
-        <form method="post" action="./users/register_user.php" enctype="multipart/form-data">
+        <form id="form_add_user" method="post" action="./users/register_user.php" enctype="multipart/form-data">
             <div class="form-group p-2 m-2">
                 <label for="firstname">Prénom : </label>
                 <input class="form-control" type="text" name="firstname" id="firstname" required>
