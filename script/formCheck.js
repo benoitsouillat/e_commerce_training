@@ -45,10 +45,15 @@ if (formAddUser) {
         lastName = document.getElementById('lastname').value;
         email = document.getElementById('email').value;
         emailVerification = document.getElementById('email-verification').value;
+        password = document.getElementById("password");
+        passwordVerification = document.getElementById("password-verification");
         error = "";
 
         if (!regStr.test(firstName) || !regStr.test(lastName)) {
             error = "Le nom et le prénom doivent être en caractère romains";
+        }
+        if (password != passwordVerification) {
+            error = "Les deux mots de passe doivent être identiques";
         }
         if (email != emailVerification) {
             error = "Les deux emails doivent être identiques";
@@ -60,7 +65,5 @@ if (formAddUser) {
             e.preventDefault();
             document.getElementById('error').innerHTML = error;
         }
-
-
     });
 }

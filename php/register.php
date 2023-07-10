@@ -33,6 +33,14 @@
                 <label for="email">Vérifier Email : </label>
                 <input class="form-control" type="email" name="email" id="email-verification" required>
             </div>
+            <div class="form-group p-2 m-2">
+                <label for="password">Mot de passe : </label>
+                <input class="form-control" type="password" name="password" id="password" required>
+            </div>
+            <div class="form-group p-2 m-2">
+                <label for="password">Mot de passe : </label>
+                <input class="form-control" type="password" name="password-verification" id="password-verification" required>
+            </div>
             <br>
             <div class="form-group p2 m2">
                 <input type="hidden" name="MAX_FILE_SIZE" value="5000000">
