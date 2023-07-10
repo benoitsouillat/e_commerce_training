@@ -38,6 +38,11 @@
                 <img class="rounded" src=<?php echo '.' . htmlspecialchars($row['img_path']); ?>>
                 <p class="card_price"><?php echo htmlspecialchars($row['price'] . " €"); ?></p>
                 <p class="card_desc"><?php echo htmlspecialchars($row['description']); ?></p>
+                <?php
+                     if (isset($_SESSION['username']) and ($_SESSION['username'] != "")) {
+
+                    ?>
+
                 <div class="btn_container">
                     <a type="button" class="card_btn_modify btn btn-warning" id="<?php echo $row['id']; ?>"
                         href="./php/modify-item.php?id=<?php echo $row['id']; ?>">Modifier
@@ -46,6 +51,7 @@
                         href="./php/delete-item.php?id=<?php echo $row['id']; ?>">Suppression
                     </a>
                 </div>
+                <?php } ?>
             </div>
             <?php endwhile; ?>
 
