@@ -44,7 +44,8 @@
             </div>
             <div class="form-group p-2 m-2">
                 <label for="password-verification">Vérifiez le Mot de passe : </label>
-                <input class="form-control" type="password" name="password-verification" id="password-verification" required>
+                <input class="form-control" type="password" name="password-verification" id="password-verification"
+                    required>
             </div>
             <div class="form-group p-2 m-2">
                 <input type="hidden" name="MAX_FILE_SIZE" value="5000000">
@@ -59,7 +60,7 @@
         </form>
         <div class="action_container">
             <a href="../index.php" class="btn btn-info">Retour à l'accueil</a>
-            <a href="./login.php" class="btn btn-primary">Se connecter</a>
+            <a href="./login.php" class="btn btn-success">Se connecter</a>
         </div>
     </section>
 
