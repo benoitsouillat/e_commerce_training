@@ -14,6 +14,12 @@ if (isset($_POST['firstname'], $_POST['lastname'], $_POST['email'])) {
     $email = $_POST['email'];
     $img_profil_path = DEFAULT_PROFIL_PATH;
 
+    $email_list = get_list_emails($conn, get_all_emails());
+    foreach ($email_list as $el) {
+        if ($_POST['email'] == $el['email']) {
+            return new Error("Cet email existe déjà");
+        }
+    }
     if (isset($_FILES['profil_img'])) {
         $id = get_last_id_number($conn, $all_users);
 

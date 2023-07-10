@@ -13,6 +13,13 @@ function get_last_id_number($conn, $all_items)
     return $data[$data_length - 1]->id;
 };
 
+function get_list_emails($conn, $req)
+{
+    $stmt = $conn->query($req);
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $data;
+}
+
 //Récupération de donnée d'un élement en tableau associatif
 function id_query_assoc($conn, $item)
 {

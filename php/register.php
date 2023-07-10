@@ -43,11 +43,12 @@
                     required>
             </div>
             <br>
-            <div class="form-group p2 m2">
+            <div class="form-group p-2 m-2">
                 <input type="hidden" name="MAX_FILE_SIZE" value="5000000">
                 <label for="profil_img">Choisissez une image de profil</label>
                 <input class="form-control" type="file" name="profil_img" id="profil_img">
             </div>
+            <p id="error"></p>
             <div class="d-flex flex-row justify-content-around mt-4">
                 <button type="submit" class="btn btn-success">S'inscrire</button>
                 <button type="reset" class="btn btn-secondary">Effacer</button>
@@ -58,7 +59,7 @@
             <a href="../index.php" class="btn btn-info">Retour à l'accueil</a>
         </div>
     </section>
-    <p id="error"></p>
+
 
     <?php include_once('../src/footer.php') ?>
 </body>

@@ -21,3 +21,7 @@ function insert_user()
 {
     return "INSERT INTO users (firstname, lastname, email, img_profil_path) VALUES (:firstname, :lastname, :email, :img_profil_path)";
 }
+function get_all_emails()
+{
+    return "SELECT email FROM users";
+}
