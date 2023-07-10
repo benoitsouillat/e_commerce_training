@@ -16,6 +16,10 @@ function update_query($id)
 {
     return ("UPDATE merchandise SET name = :name, price = :price, description = :description, img_path = :img_path WHERE id = $id");
 };
+function select_user_by_email($email)
+{
+    return ("SELECT * FROM users WHERE email='$email'");
+}
 
 function insert_user()
 {

@@ -75,3 +75,10 @@ function insert_item($conn, $req, $img_path)
         echo "Une erreur s'est produite : " . $e->getMessage();
     }
 };
+
+
+//Récupération des données de l'utilisateur qui se connecte
+function get_user_by_email($conn, $req)
+{
+    return id_query_assoc($conn, $req);
+}

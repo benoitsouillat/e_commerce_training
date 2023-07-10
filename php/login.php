@@ -6,7 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Se Connecter</title>
     <?php
+    require_once(__DIR__ . '/components/connection.php');
+    require_once(__DIR__ . '/components/sql.php');
+    require_once(__DIR__ . '/components/format_str.php');
+    require_once(__DIR__ . '/components/items_functions.php');
     require_once(__DIR__ . '/../src/headlinks.php');
+
+    if (isset($_POST['email'], $_POST['password'])) {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $user = get_user_by_email($conn, select_user_by_email($email));
+        $hash = $user['password'];
+        if (password_verify($password, $hash)) {
+            session_start();
+            $_SESSION['username'] = $user['firstname'];
+            $_SESSION['role'] = $user['role'];
+            header("Location:../index.php");
+        } else {
+            header("Location: ./login.php?error=mdp");
+        }
+    }
+
     ?>
 </head>
 
@@ -14,11 +34,11 @@
     <h1>Espace utilisateur</h1>
     <h2> Se connecter sur notre site </h2>
     <section class="container-fluid register_bloc w-100 d-flex justify-content-center">
-        <form id="form_add_user" method="post" action="./users/register_user.php" enctype="multipart/form-data">
+        <form id="login_form" method="post" action="login.php">
             <p class="error">
                 <?php
-                if (isset($_GET['error'])) {
-                    echo $_GET['email'] . ' est déjà utilisé ! ';
+                if (isset($_GET['error']) && $_GET['error'] = 'mdp') {
+                    echo 'Les identifiants ne sont pas bons';
                 }
                 ?>
             </p>
