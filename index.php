@@ -22,7 +22,7 @@
                     session_start();
                     if (isset($_SESSION['username']) and ($_SESSION['username'] != "")) {
                         $username = $_SESSION['username'];
-                        //$role = $_SESSION['role'];
+                        $role = $_SESSION['role'];
                         echo 'Connecté : ' . $username . ' - ' . $role;
                     }
                     ?>
