@@ -17,7 +17,7 @@
 
     <section class="container-fluid" id='add_item'>
         <div class="d-flex flex-row justify-content-center">
-            <form action="add-item.php" method="POST" enctype="multipart/form-data">
+            <form id="form_add_item" action="add-item.php" method="POST" enctype="multipart/form-data">
                 <div class="form-group p-2 m-2">
                     <label name="name">Article : </label>
                     <input class="form-control" name="name" placeholder="Nom de l'article">
@@ -30,7 +30,8 @@
                 <br>
                 <div class="form-group p-2 m-2">
                     <label name="description">Description : </label>
-                    <textarea class="form-control" name="description" placeholder="La description de l'article ... "></textarea>
+                    <textarea class="form-control" name="description"
+                        placeholder="La description de l'article ... "></textarea>
                 </div>
                 <div class="form-group p-2 m-2">
                     <input type="hidden" name="MAX_FILE_SIZE" value="5000000">
@@ -46,6 +47,8 @@
 
     </section>
 
+
+    <?php include_once('../src/footer.php');?>
 
 </body>
 
