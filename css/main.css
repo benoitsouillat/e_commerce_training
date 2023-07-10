@@ -105,7 +105,7 @@ body footer {
   bottom: 80px;
 }
 
-#error {
+.error {
   font-weight: bold;
   text-align: center;
   color: red;

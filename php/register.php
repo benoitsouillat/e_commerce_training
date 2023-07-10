@@ -15,6 +15,13 @@
     <h2> S'inscrire sur notre site </h2>
     <section class="container-fluid register_bloc w-100 d-flex justify-content-center">
         <form id="form_add_user" method="post" action="./users/register_user.php" enctype="multipart/form-data">
+            <p class="error">
+                <?php
+                if (isset($_GET['error'])) {
+                    echo 'Cet email est déjà utilisé ! ';
+                }
+                ?>
+            </p>
             <div class="form-group p-2 m-2">
                 <label for="firstname">Prénom : </label>
                 <input class="form-control" type="text" name="firstname" id="firstname" required>
@@ -39,8 +46,7 @@
             </div>
             <div class="form-group p-2 m-2">
                 <label for="password-verification">Vérifiez le Mot de passe : </label>
-                <input class="form-control" type="password" name="password-verification" id="password-verification"
-                    required>
+                <input class="form-control" type="password" name="password-verification" id="password-verification" required>
             </div>
             <br>
             <div class="form-group p-2 m-2">
@@ -48,7 +54,7 @@
                 <label for="profil_img">Choisissez une image de profil</label>
                 <input class="form-control" type="file" name="profil_img" id="profil_img">
             </div>
-            <p id="error"></p>
+            <p id="error" class="error"></p>
             <div class="d-flex flex-row justify-content-around mt-4">
                 <button type="submit" class="btn btn-success">S'inscrire</button>
                 <button type="reset" class="btn btn-secondary">Effacer</button>

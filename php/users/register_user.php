@@ -13,37 +13,42 @@ if (isset($_POST['firstname'], $_POST['lastname'], $_POST['email'])) {
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
     $img_profil_path = DEFAULT_PROFIL_PATH;
-
     $email_list = get_list_emails($conn, get_all_emails());
+    $error_php = "";
+
     foreach ($email_list as $el) {
         if ($_POST['email'] == $el['email']) {
-            return new Error("Cet email existe déjà");
-        }
-    }
-    if (isset($_FILES['profil_img'])) {
-        $id = get_last_id_number($conn, $all_users);
-
-        $file_name = $id + 1 . replace_space(strtolower($firstname . '-' . $lastname)) . '.jpg';
-        $file_tmp = $_FILES['profil_img']['tmp_name'];
-        $file_destination = '../../media/users/' . $file_name;
-
-        if (move_uploaded_file($file_tmp, $file_destination)) {
-            echo "L'image a bien été enregistrée";
-            $img_profil_path = "/media/users/" . $file_name . '.jpg';
+            $error_php = "Cet email est déjà enregistré ! ";
+            return (header("Location:../register.php?error=email"));
         } else {
-            echo "Une erreur s'est produite pendant l'enregistrement de l'image de profil";
-        }
-    }
 
-    $stmt = $conn->prepare(insert_user());
-    $stmt->bindParam(':firstname', $firstname);
-    $stmt->bindParam(':lastname', $lastname);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':img_profil_path', $img_profil_path);
-    try {
-        $stmt->execute();
-        header("Location:../../index.php");
-    } catch (PDOException $e) {
-        echo "Une erreur s'est produite : " . $e->getMessage();
+
+            if (isset($_FILES['profil_img'])) {
+                $id = get_last_id_number($conn, $all_users);
+
+                $file_name = $id + 1 . replace_space(strtolower($firstname . '-' . $lastname)) . '.jpg';
+                $file_tmp = $_FILES['profil_img']['tmp_name'];
+                $file_destination = '../../media/users/' . $file_name;
+
+                if (move_uploaded_file($file_tmp, $file_destination)) {
+                    echo "L'image a bien été enregistrée";
+                    $img_profil_path = "/media/users/" . $file_name . '.jpg';
+                } else {
+                    echo "Une erreur s'est produite pendant l'enregistrement de l'image de profil";
+                }
+            }
+
+            $stmt = $conn->prepare(insert_user());
+            $stmt->bindParam(':firstname', $firstname);
+            $stmt->bindParam(':lastname', $lastname);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':img_profil_path', $img_profil_path);
+            try {
+                $stmt->execute();
+                header("Location:../../index.php");
+            } catch (PDOException $e) {
+                echo "Une erreur s'est produite : " . $e->getMessage();
+            }
+        }
     }
 }
