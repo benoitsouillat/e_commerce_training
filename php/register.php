@@ -26,12 +26,10 @@
                 <label for="firstname">Prénom : </label>
                 <input class="form-control" type="text" name="firstname" id="firstname" required>
             </div>
-            <br>
             <div class="form-group p-2 m-2">
                 <label for="lastname">Nom : </label>
                 <input class="form-control" type="text" name="lastname" id="lastname" required>
             </div>
-            <br>
             <div class="form-group p-2 m-2">
                 <label for="email">Email : </label>
                 <input class="form-control" type="email" name="email" id="email" required>
@@ -46,9 +44,9 @@
             </div>
             <div class="form-group p-2 m-2">
                 <label for="password-verification">Vérifiez le Mot de passe : </label>
-                <input class="form-control" type="password" name="password-verification" id="password-verification" required>
+                <input class="form-control" type="password" name="password-verification" id="password-verification"
+                    required>
             </div>
-            <br>
             <div class="form-group p-2 m-2">
                 <input type="hidden" name="MAX_FILE_SIZE" value="5000000">
                 <label for="profil_img">Choisissez une image de profil</label>
