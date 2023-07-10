@@ -45,8 +45,8 @@ if (formAddUser) {
         lastName = document.getElementById('lastname').value;
         email = document.getElementById('email').value;
         emailVerification = document.getElementById('email-verification').value;
-        password = document.getElementById("password");
-        passwordVerification = document.getElementById("password-verification");
+        password = document.getElementById("password").value;
+        passwordVerification = document.getElementById("password-verification").value;
         error = "";
 
         if (!regStr.test(firstName) || !regStr.test(lastName)) {
