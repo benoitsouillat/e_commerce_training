@@ -48,7 +48,6 @@
                 <p id="error"></p>
             </div>
         </div>
-
     </section>
 
 
