@@ -41,7 +41,6 @@ if (formAddItem || formModifyItem) {
 }
 if (formAddUser) {
     formAddUser.addEventListener("submit", (e) => {
-        e.preventDefault();
         firstName = document.getElementById('firstname').value;
         lastName = document.getElementById('lastname').value;
         email = document.getElementById('email').value;

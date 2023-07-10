@@ -13,7 +13,7 @@
 <body class="d-flex flex-column justify-content-center align-items-center">
     <h1>Espace utilisateur</h1>
     <h2> S'inscrire sur notre site </h2>
-    <section class="register_bloc">
+    <section class="container-fluid register_bloc w-100 d-flex justify-content-center">
         <form id="form_add_user" method="post" action="./users/register_user.php" enctype="multipart/form-data">
             <div class="form-group p-2 m-2">
                 <label for="firstname">Prénom : </label>
@@ -39,14 +39,16 @@
                 <label for="profil_img">Choisissez une image de profil</label>
                 <input class="form-control" type="file" name="profil_img" id="profil_img">
             </div>
-            <button type="submit" class="btn btn-success">S'inscrire</button>
-            <button type="reset" class="btn btn-secondary">Effacer</button>
+            <div class="d-flex flex-row justify-content-around mt-4">
+                <button type="submit" class="btn btn-success">S'inscrire</button>
+                <button type="reset" class="btn btn-secondary">Effacer</button>
+            </div>
         </form>
+        <div class="action_container">
+            <a href="./form_add_item.php" class="btn btn-primary">Ajouter un article</a>
+            <a href="../index.php" class="btn btn-info">Retour à l'accueil</a>
+        </div>
     </section>
-    <div class="action_container">
-        <a href="./form_add_item.php" class="btn btn-primary">Ajouter un article</a>
-        <a href="../index.php" class="btn btn-info">Retour à l'accueil</a>
-    </div>
     <p id="error"></p>
 
     <?php include_once('../src/footer.php') ?>
